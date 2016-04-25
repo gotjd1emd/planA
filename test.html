@@ -2,11 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>test</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <title>document scope</title>
   </head>
   <body>
-    <p>
-      test file
-    </p>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">
+            <span></span></a></li>
+            <li role="presentation"><a href="#">tag</a></li>
+            <li role="presentation"><a href="#">profile</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+
+        <a class="left carousel-control"  role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-gidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        <h1>title</h1>
+        <p>
+          section test
+        </p>
+        <p>
+          section test2
+        </p>
+        <a class="right carousel-control" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-gidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-sass-3.3.6/assets/javascripts/bootstrap.min.js"></script>
   </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" type="text/css" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'polls/css/bootstrap.min.css' %}">
+    <title>document scope</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">home</a></li>
+            <li role="presentation"><a href="#">tag</a></li>
+            <li role="presentation"><a href="#">profile</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col-lg-8">
+        {% if blog_content %}
+          {% for blog in blog_content.post_set.all %}
+          <div class="header">
+            <h1>{{ blog.post_title }}</h1>
+          </div>
+
+          <h1>{{ blog_content.year }}</h1>
+          <p>
+            {{ blog.post_text }}
+          </p>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'polls/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
